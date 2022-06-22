@@ -1,12 +1,67 @@
 # TripleHomeWork
+## 프로젝트 실행 방법
+- `npm install`
+Node.js기반으로 프로젝트를 시작하기 위함.
 
-# typescript react로 시작
+- `npm install styled-components `
+- `npm install --save-dev @types/styled-components`
+styled-component 설치
+
+- `npm start`
+프로젝트 시작
+
+
+
+------
+
+## 사용한 기술과 선택한 이유
+
+
+### typescript react로 시작
 create-react-app triplehomework --template=typescript
-- 기존 javscript에 비하여 에러 검출이 쉽다.
+- 기존 javscript에 비하여 에러 검출이 쉽습니다.
+- 코드의 에러 부분을 쉽게 알 수 있습니다.
 - triple기업에서 사용하는 양식
+- 과제를 시작하면서 `트리플`에서 사용하는 기술이며 프론트엔드부분에 필수적인 기술로 생각되어 독학 후
+적용해보았습니다.
+- 자주 사용하여 기업의 코드에 적응할 수 있도록 노력하고자 선택하였습니다.
 
-# styled-components 적용
-npm install styled-components 
-npm install --save-dev @types/styled-components
+### styled-components 적용
 - 명확한 css적용 ( 유지보수 용이 )
+- 큰 볼륨을 가진 
 - class명 중복 방지
+- typescript접목으로 조금의 문법상 어려움이 있었습니다.
+- 배워야할 기술이기에 선택하였습니다.
+
+### eslint 와 prettie 적용 시도
+- 처음 접하는 툴이지만 하루동안 학습과 적용시도를 해보았습니다.
+- 코드의 에러와 트리플만의 코드 스타일을 적용 할 수 있을 것이라는 기대가 있었지만
+사소한 에러가 여러번 등장하여 최종적으로 적용하지 못하였습니다.
+- 혼자만의 학습과 구글링만으로 해결을 못하는 문제를 만나서 어떻게 해결할 수 있는지
+질문하고 싶은 문제입니다.
+
+### css의 animation적용
+- 숫자 상승의 속도 조절을 `animation-timing-function`로 적용 하였으나 정상 작동이 안되어 하드코딩으로 구현하였습니다.
+- 일반적인 javascript만으로 구현시 속도조절에 필요한 별도의 로직이 필요하다고 판단하여 css로 구현하고자 하였습니다.
+- 구글링에서는 jquery를 이용한 예제가 많았고, scss를 이용한 예제또한 있었지만 
+styled-component를 사용한 예제는 없어서 변형시켜 구현하였습니다.
+- 다양한 구현 방법에 대하여 학습할 수 있었습니다.
+
+### 최상위 app 
+- 문제를 구현함에 있어 바로 app에 컴포넌트를 적용할 수 있었지만 차후 확장성과 의미를 생각하여
+하위 MainPage를 만들었습니다.
+
+### Section/AwardSection
+- 트리플의 홈페이지 내의 한 세션이므로 Section 폴더내에 AwardSection를 생성하여
+차후 다른 세션을 추가하거나 담당세션을 유지보수하기 쉽게 구분하였습니다.
+- 리엑트 구현 부분과 styled-component로 문서를 구분한 것은 차후 확장가능성(코드의 길이)이 커질 가능성이 있으므로 구분하였습니다.
+
+###  components/AwardSection
+- 구현하는 세션에 대한 세부 컨포넌트로써 다른곳에서도 사용 할 법한 부분으로 구분하여 정의한 것입니다.
+- 숫자 상승을 하는 부분과 수상기록과 아이콘 부분을 컨포넌트화 하였습니다.
+
+### 컨포넌트 구분 기준
+- 페이지 혹은 세션 = javascript코드와 styled 코드를 분리합니다. (커질 가능성이 높기에)
+- 페이지 내의 컨포넌트 (구성요소로써 다른 페이지 혹은 세션에도 이용 할 법한 코드) = 하나의 컨포넌트 파일로 제작합니다.
+- 기능을 생각하여 구분해서 쪼개놓습니다. 
+- 프로젝트 마다 성격과 함께 일하는 팀원과의 의견을 통해 컨포넌트의 기준을 정의하고 시작합니다.
