@@ -18,7 +18,7 @@ export default AwardInfoCnt;
 
 function createCSS(num : number) {
   let styles = ``;
-  for (let i = 0; i < 64; i += 1) {
+  for (let i = 0; i < 80; i += 1) {
     let number : number = Math.round(num * i / 100) 
     styles += `
       ${i.toString()+"%"} {
@@ -26,7 +26,7 @@ function createCSS(num : number) {
       }
      `
   }
-  for (let i = 64; i < 76; i += 3) {
+  for (let i = 80; i < 101; i += 4) {
     let number : number = Math.round(num * i / 100) 
     styles += `
       ${i.toString()+"%"} {
@@ -34,15 +34,6 @@ function createCSS(num : number) {
       }
      `
   }
-  for (let i = 76; i < 101; i += 6) {
-    let number : number = Math.round(num * i / 100) 
-    styles += `
-      ${i.toString()+"%"} {
-        content : ${`"` + number.toString() + `"`};
-      }
-     `
-  }
-  
   return css`${styles}`;
 }
 
