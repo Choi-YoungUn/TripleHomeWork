@@ -1,11 +1,12 @@
 import React from 'react';
 import './App.css';
+import AwardSection from "./Section/AwardSection/AwardSection"
 
-function App() {
+
+const App : React.FC = () => {
   return (
-    
     <div className="App">
-      <h1>start pacofdf</h1>
+      <AwardSection></AwardSection>
     </div>
   );
 }
